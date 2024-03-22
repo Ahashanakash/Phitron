@@ -1,5 +1,5 @@
 vector<long long> printFirstNegativeInteger(long long int A[],
-                                             long long int N, long long int K) {
+                                            long long int N, long long int K) {
                                                  
     vector<long long> v;
     queue<long long> ni;
