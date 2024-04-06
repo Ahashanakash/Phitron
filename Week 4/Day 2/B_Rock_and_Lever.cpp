@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 #define ll long long
+
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -12,26 +12,23 @@ int main()
     {
         int n;
         cin >> n;
-        vector<ll> arr(n), b(33, 0);
-        ll ans = 0;
+        vector<ll> arr(n);
         for (int i = 0; i < n; i++)
+        {
             cin >> arr[i];
-
-        for (int i = 0; i < n; i++)
-        {
-            ll z = arr[i];
-            ll c = 0;
-            while (z > 0)
-            {
-                z = z / 2;
-                c++;
-            }
-            b[c]++;
         }
-        for (int i = 0; i <= 32; i++)
+        ll ans = 0;
+        for (int j = 29; j >= 0; j--)
         {
-            if (b[i] >= 2)
-                ans = ans + (b[i] * (b[i] - 1) / 2);
+            ll cnt = 0;
+            for (int i = 0; i < n; i++)
+            {
+                if (a[i] >= (1 << j) && a[i] < (1 << (j + 1)))
+                {
+                    cnt++;
+                }
+            }
+            ans += cnt * (cnt - 1) / 2;
         }
         cout << ans << endl;
     }
