@@ -10,20 +10,17 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll n;
+        int n;
         cin >> n;
-        ll andd = n;
-        ll ans ;
-        for (int i = n - 1; i >= 0; i--)
+        ll ans = 1;
+        while (ans < n)
         {
-            andd = andd & i;
-            if (andd == 0)
-            {
-                ans = i;
+            if (ans * 2 > n)
                 break;
-            }
+
+            ans *= 2;
         }
-        cout << ans << endl;
+        cout << ans - 1 << "\n";
     }
     return 0;
 }
