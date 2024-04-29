@@ -20,9 +20,7 @@ void solve()
         {
             total += (m / arr[i]);
             if (total >= t)
-            {
                 return true;
-            }
         }
         return false;
     };
@@ -41,7 +39,6 @@ void solve()
             left = mid + 1;
         }
     }
-
     cout << ans << '\n';
 }
 int main()
